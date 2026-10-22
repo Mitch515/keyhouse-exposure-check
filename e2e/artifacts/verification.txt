@@ -1,0 +1,8 @@
+Runtime: Node v22.23.3
+Commands: npm run check; npm run test:e2e; npm run lint; npm audit; npm pack --dry-run --ignore-scripts
+Result: 3 Playwright checks passed. Strict type checks and whitespace lint passed. Audit: 0 vulnerabilities.
+Railway: 60 findings across 2 projects, 2 environments each, shared variables and 2 services per environment.
+Local env: 8 findings. Hard rail: whole seeded values and every five-character slice absent from CLI stdout/stderr, Markdown and JSON, including API/file errors.
+All locked dependency releases exceed 7 days. Only compiled code, README, package metadata and license notices are packed.
+No live Railway account, publication, repository creation or push. No browser or persistent server was started.
+Repeat with Node 22: npm ci --ignore-scripts && npm run check && npm run test:e2e && npm run lint

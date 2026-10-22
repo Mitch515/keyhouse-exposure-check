@@ -1,0 +1,189 @@
+{
+  "source": "Local .env",
+  "variablesScanned": 12,
+  "excluded": 4,
+  "placements": [
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file"
+    }
+  ],
+  "findings": [
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 1,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets."
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 2,
+      "variable": "APIFY_TOKEN_COPY",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 3,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating."
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 4,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password."
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 5,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets."
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 6,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 7,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources."
+    },
+    {
+      "project": "Local .env",
+      "environment": "local",
+      "service": "file",
+      "number": 8,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys."
+    }
+  ],
+  "checklist": [
+    {
+      "provider": "Apify",
+      "findings": [
+        "#1",
+        "#2",
+        "#6"
+      ],
+      "url": "https://console.apify.com/settings/integrations",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Unrecognized",
+      "findings": [
+        "#3"
+      ],
+      "url": "No universal key-management URL; use the credential owner dashboard.",
+      "linkStatus": "manual",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Database",
+      "findings": [
+        "#4"
+      ],
+      "url": "No universal key-management URL; use the credential owner dashboard.",
+      "linkStatus": "manual",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "GitHub",
+      "findings": [
+        "#5"
+      ],
+      "url": "https://github.com/settings/tokens",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "OpenAI",
+      "findings": [
+        "#7"
+      ],
+      "url": "https://platform.openai.com/api-keys",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Stripe",
+      "findings": [
+        "#8"
+      ],
+      "url": "https://dashboard.stripe.com/apikeys",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    }
+  ],
+  "limitations": "Candidates, not proof of compromise or an exhaustive secret audit. Unrecognized formats and innocuous names can be missed. Sealed or inaccessible variables may not be returned by Railway. An empty scan does not prove safety.",
+  "privacy": "Values stay in memory. No telemetry. Only Railway API reads; env mode makes no network calls.",
+  "keyhouse": "Keyhouse: proxy keys keep real credentials off your host, so a host breach leaks no real keys."
+}

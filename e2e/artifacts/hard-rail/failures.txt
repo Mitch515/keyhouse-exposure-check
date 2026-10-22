@@ -1,0 +1,11 @@
+Railway exit: 1
+(node:3183412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Scan failed. No complete report was produced. Check file permissions, report filename, network access and Railway token scope. Existing report files are never overwritten. Railway invalidated all API tokens on October 22, 2026. Create a new account token at https://railway.com/account/tokens, choosing No workspace, or a workspace token for one workspace. Supply RAILWAY_API_TOKEN or use the hidden prompt. Project tokens cannot enumerate projects.
+Keyhouse: proxy keys keep real credentials off your host, so a host breach leaks no real keys.
+
+File exit: 1
+(node:3183486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Scan failed. No complete report was produced. Check file permissions, report filename, network access and Railway token scope. Existing report files are never overwritten.
+Keyhouse: proxy keys keep real credentials off your host, so a host breach leaks no real keys.

@@ -1,0 +1,921 @@
+{
+  "source": "Railway",
+  "variablesScanned": 92,
+  "excluded": 32,
+  "placements": [
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "Shared variables"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "Shared variables"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "Shared variables"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "Shared variables"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker"
+    }
+  ],
+  "findings": [
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "Shared variables",
+      "number": 1,
+      "variable": "SHARED_APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 2,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 3,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 4,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 5,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 6,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 7,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating."
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "api",
+      "number": 8,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 9,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 10,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 11,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 12,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 13,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 14,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Demo app",
+      "environment": "production",
+      "service": "worker",
+      "number": 15,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "Shared variables",
+      "number": 16,
+      "variable": "SHARED_APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 17,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 18,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 19,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 20,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 21,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 22,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "api",
+      "number": 23,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 24,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 25,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 26,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 27,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 28,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 29,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Demo app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 30,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "Shared variables",
+      "number": 31,
+      "variable": "SHARED_APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 32,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 33,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 34,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 35,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 36,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 37,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "api",
+      "number": 38,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 39,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 40,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 41,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 42,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 43,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 44,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Second app",
+      "environment": "production",
+      "service": "worker",
+      "number": 45,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "Shared variables",
+      "number": 46,
+      "variable": "SHARED_APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 47,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 48,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 49,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 50,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 51,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 52,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "api",
+      "number": 53,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 54,
+      "variable": "OPENAI_API_KEY",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "reason": "Value format matches Gitleaks rule openai-api-key.",
+      "whyItMatters": "Can spend your inference budget and access provider resources.",
+      "duplicate": "same as #2"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 55,
+      "variable": "STRIPE_SECRET_KEY",
+      "provider": "Stripe",
+      "providerId": "stripe",
+      "reason": "Value format matches Gitleaks rule stripe-access-token.",
+      "whyItMatters": "Can access payment data or perform payment operations. Check live and test keys.",
+      "duplicate": "same as #3"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 56,
+      "variable": "GH_TOKEN",
+      "provider": "GitHub",
+      "providerId": "github",
+      "reason": "Value format matches Gitleaks rule github-pat.",
+      "whyItMatters": "Can read code, modify repositories or reach CI secrets.",
+      "duplicate": "same as #4"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 57,
+      "variable": "APIFY_TOKEN",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Variable-name heuristic; review this candidate. The value format is not verified.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 58,
+      "variable": "DATABASE_URL",
+      "provider": "Database",
+      "providerId": "database",
+      "reason": "URL contains embedded credentials or a credential query parameter.",
+      "whyItMatters": "Can read, change or delete database contents. Rotate the database role password.",
+      "duplicate": "same as #6"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 59,
+      "variable": "CUSTOM_SECRET",
+      "provider": "Unrecognized",
+      "providerId": "unrecognized",
+      "reason": "Provider inferred from the same value at #7.",
+      "whyItMatters": "A credential-like variable needs manual review. Identify its owner before rotating.",
+      "duplicate": "same as #7"
+    },
+    {
+      "project": "Second app",
+      "environment": "preview",
+      "service": "worker",
+      "number": 60,
+      "variable": "MALICIOUS_SECRET_█",
+      "provider": "Apify",
+      "providerId": "apify",
+      "reason": "Provider inferred from the same value at #1.",
+      "whyItMatters": "Can run actors, spend credits and read datasets.",
+      "duplicate": "same as #1"
+    }
+  ],
+  "checklist": [
+    {
+      "provider": "Apify",
+      "findings": [
+        "#1",
+        "#5",
+        "#8",
+        "#12",
+        "#15",
+        "#16",
+        "#20",
+        "#23",
+        "#27",
+        "#30",
+        "#31",
+        "#35",
+        "#38",
+        "#42",
+        "#45",
+        "#46",
+        "#50",
+        "#53",
+        "#57",
+        "#60"
+      ],
+      "url": "https://console.apify.com/settings/integrations",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "OpenAI",
+      "findings": [
+        "#2",
+        "#9",
+        "#17",
+        "#24",
+        "#32",
+        "#39",
+        "#47",
+        "#54"
+      ],
+      "url": "https://platform.openai.com/api-keys",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Stripe",
+      "findings": [
+        "#3",
+        "#10",
+        "#18",
+        "#25",
+        "#33",
+        "#40",
+        "#48",
+        "#55"
+      ],
+      "url": "https://dashboard.stripe.com/apikeys",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "GitHub",
+      "findings": [
+        "#4",
+        "#11",
+        "#19",
+        "#26",
+        "#34",
+        "#41",
+        "#49",
+        "#56"
+      ],
+      "url": "https://github.com/settings/tokens",
+      "linkStatus": "unverified dashboard link",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Database",
+      "findings": [
+        "#6",
+        "#13",
+        "#21",
+        "#28",
+        "#36",
+        "#43",
+        "#51",
+        "#58"
+      ],
+      "url": "No universal key-management URL; use the credential owner dashboard.",
+      "linkStatus": "manual",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    },
+    {
+      "provider": "Unrecognized",
+      "findings": [
+        "#7",
+        "#14",
+        "#22",
+        "#29",
+        "#37",
+        "#44",
+        "#52",
+        "#59"
+      ],
+      "url": "No universal key-management URL; use the credential owner dashboard.",
+      "linkStatus": "manual",
+      "steps": [
+        "Create a replacement credential at the provider. Review permissions and recent usage.",
+        "Update every listed placement and redeploy affected services. Verify the application works.",
+        "Revoke the exposed credential. Review provider logs and unexpected spending."
+      ]
+    }
+  ],
+  "limitations": "Candidates, not proof of compromise or an exhaustive secret audit. Unrecognized formats and innocuous names can be missed. Sealed or inaccessible variables may not be returned by Railway. An empty scan does not prove safety.",
+  "privacy": "Values stay in memory. No telemetry. Only Railway API reads; env mode makes no network calls.",
+  "tokenGuidance": "Railway invalidated all API tokens on October 22, 2026. Create a new account token at https://railway.com/account/tokens, choosing No workspace, or a workspace token for one workspace. Supply RAILWAY_API_TOKEN or use the hidden prompt. Project tokens cannot enumerate projects.",
+  "keyhouse": "Keyhouse: proxy keys keep real credentials off your host, so a host breach leaks no real keys."
+}

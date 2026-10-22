@@ -1,0 +1,1 @@
+PASS: Railway and env stdout, stderr, Markdown and JSON contain no seeded secret or five-character slice. API and file failure output checked too.

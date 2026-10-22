@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.research/
+.env*
+*.tgz
+keyhouse-report*.md
+e2e/artifacts/playwright/
+e2e/artifacts/html/
