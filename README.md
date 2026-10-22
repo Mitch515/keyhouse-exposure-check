@@ -6,8 +6,7 @@ source under the MIT license. Requires Node.js 22.16 or newer.
 
 ## Run it
 
-These `npx` commands work **after the package is published**. This repository has
-not been published yet. Use the local commands below today.
+Published on npm as [`keyhouse-check`](https://www.npmjs.com/package/keyhouse-check), so `npx` downloads and runs it:
 
 ```sh
 npx keyhouse-check railway
@@ -176,5 +175,4 @@ under `e2e/artifacts/railway/`, `e2e/artifacts/env/` and
 `e2e/artifacts/playwright/`. There is no browser UI to record, so the terminal
 transcripts are the journey recordings. No browser is launched or installed.
 
-Publishing requires separate approval. Exact release commands are in
-[PUBLISHING.md](PUBLISHING.md).
+Release steps are in [PUBLISHING.md](PUBLISHING.md).
