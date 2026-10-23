@@ -2,7 +2,7 @@ export const PRODUCT = {
   name: 'Keyhouse Exposure Check',
   broker: 'Keyhouse',
   bin: 'keyhouse-check',
-  waitlistUrl: '',
+  waitlistUrl: 'https://keyhouse.dev/#waitlist',
   railwayApi: 'https://backboard.railway.com/graphql/v2',
   railwayTokens: 'https://railway.com/account/tokens',
   defaultReportPrefix: 'keyhouse-report',

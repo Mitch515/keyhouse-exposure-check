@@ -1,6 +1,6 @@
 {
   "name": "keyhouse-check",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Local Railway and .env secret exposure inventory with provider rotation checklists",
   "type": "module",
   "license": "MIT",
